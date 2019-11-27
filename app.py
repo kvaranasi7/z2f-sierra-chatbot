@@ -17,20 +17,13 @@ trainer2 = ListTrainer(bot)
 loc = ("finalz2f.xlsx")
 wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0) 
-print (sheet.nrows)
-print (sheet.ncols)
-print (sheet.cell_value(1,3))
-#prints questions
 for i in range(1,65):
-	
 	if sheet.cell_value(i,6) != '':
 		trainer2.train([sheet.cell_value(i,1), sheet.cell_value(i,2), sheet.cell_value(i,3),sheet.cell_value(i,4),sheet.cell_value(i,5),sheet.cell_value(i,6)])
 	elif sheet.cell_value(i,4) != '':
 		trainer2.train([sheet.cell_value(i,1), sheet.cell_value(i,2), sheet.cell_value(i,3),sheet.cell_value(i,4)])
 	else:
 		trainer2.train([sheet.cell_value(i,1), sheet.cell_value(i,2)])
-
-	
 
 @app.route("/")
 def home():    
