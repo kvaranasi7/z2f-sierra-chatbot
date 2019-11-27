@@ -126,9 +126,23 @@
             style="width:200px;height:80px;"
           />
 
-          <p class="botText">
-            <span>Hi! I'm Sierra  your personal IBM Summit ChatBot. What can I help you with? </span>	
+	  <p class="botText">
+            <span>Hi! I'm Sierra  your personal IBM Summit ChatBot. What is your name?</span>	
           </p>
+	  <button id="btn" onclick="myFunction()">Enter Your Name</button>
+
+	  <p class="botText" id = "demo"></p>
+
+	  <script>
+		function myFunction() {
+ 		var person = prompt("Please enter your name", "");
+  			if (person != null) {
+    		   		document.getElementById("demo").innerHTML =  "<span> Hello " + person + "! What can I help you with today? </span>";
+				var btn = document.getElementById("btn");
+				btn.style.display = 'none'
+  			}
+		}
+	  </script>
         </div>
         <div id="userInput">
           <input id="textInput" type="text" name="msg" placeholder="Message" />
