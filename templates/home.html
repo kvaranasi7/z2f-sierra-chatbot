@@ -146,13 +146,13 @@
 		}
 	  </script>
         </div>
-<!--	<form id="labnol" method="get" action="https://w3.ibm.com/search/beta/">  -->
+<!--	<form id="labnol" method="get" action="https://w3.ibm.com/search/beta/"> -->
 	<div id="userInput">
           <input id="textInput" type="text" name="msg" placeholder="Type Your Questions Here!" />
 	  <img onclick="startDictation()" src="//i.imgur.com/cHidSVu.gif" />
-	  <p align = "right">Search w3<img align="middle" vertical-align="middle" display = "inline-block"  onclick="startDictation()" src="https://media1.giphy.com/media/12gdxXLkzSUIjhHGye/source.gif" width ="75" height="50" /></p>
+	  <a href = "https://w3.ibm.com/search/beta/"><p align = "right">Search w3<img align="middle" vertical-align="middle" display = "inline-block" src="https://media1.giphy.com/media/12gdxXLkzSUIjhHGye/source.gif" width ="75" height="50" /></p></a>
         </div>
-<!--	</form>  -->
+<!--	</form>  --> 
 	<script>
   function startDictation() {
 
@@ -179,6 +179,32 @@
 
     }
   }
+<!--
+  function w3Search() {
+
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-US";
+      recognition.start();
+
+      recognition.onresult = function(e) {
+        document.getElementById('textInput').value
+                                 = e.results[0][0].transcript;
+        recognition.stop();
+       document.getElementById('labnol').submit();
+       };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  } -->
 </script>
 
       </div>
