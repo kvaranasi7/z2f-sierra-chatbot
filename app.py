@@ -17,7 +17,7 @@ trainer2 = ListTrainer(bot)
 loc = ("finalz2f.xlsx")
 wb = xlrd.open_workbook(loc)
 sheet = wb.sheet_by_index(0) 
-for i in range(1,65):
+for i in range(1,77):
 	if sheet.cell_value(i,6) != '':
 		trainer2.train([sheet.cell_value(i,1), sheet.cell_value(i,2), sheet.cell_value(i,3),sheet.cell_value(i,4),sheet.cell_value(i,5),sheet.cell_value(i,6)])
 	elif sheet.cell_value(i,4) != '':
